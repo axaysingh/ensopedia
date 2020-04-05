@@ -22,7 +22,7 @@ function Navbar(props) {
       >
         <img
           className="fadeInUp logo"
-          alt="India COVID-19 Tracker"
+          alt="COVID-19 Coronavirus Pandemic Tracker"
           src="/icon.png"
           style={{
             animationDelay: '0.0s',
