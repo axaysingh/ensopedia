@@ -1539,48 +1539,58 @@ footer {
   }
 }
 
-.FAQ {
+.chat,
+.Apollocare{
+  // width: 30rem;
+  margin-top: 1rem;
+  margin-bottom: 0.5rem;
+  align-self: center;
+  // position: 'absolute';
   display: flex;
   flex-direction: column;
-  width: 100%;
-  min-height: 30rem;
-
-  & > * {
-    align-self: center;
-    width: 30rem;
-    margin-bottom: 1.5rem;
-  }
-
-  & > *:first-child {
-    margin-top: 2rem;
-  }
-
-  h2 {
-    margin: 0;
-    font-weight: 600;
-    text-transform: none;
-  }
-
-  .question {
-    color: $gray-dark;
-    margin: 0;
-    margin-bottom: 0.25rem;
-  }
-
-  .answer {
-    color: $blue;
-    line-height: 1.5rem;
-  }
-
-  a {
-    background: $blue-light;
-    color: $blue;
-    text-decoration: none;
-    &:hover {
-      text-decoration: underline;
-    }
-  }
 }
+// .Apollocare {
+//   display: flex;
+//   flex-direction: column;
+//   width: 100%;
+//   min-height: 30rem;
+
+//   & > * {
+//     align-self: center;
+//     width: 30rem;
+//     margin-bottom: 1rem;
+//   }
+
+//   & > *:first-child {
+//     margin-top: 2rem;
+//   }
+
+//   h2 {
+//     margin: 0;
+//     font-weight: 600;
+//     text-transform: none;
+//   }
+
+//   .question {
+//     color: $gray-dark;
+//     margin: 0;
+//     margin-bottom: 0.25rem;
+//   }
+
+//   .answer {
+//     color: $blue;
+//     line-height: 1.5rem;
+//   }
+
+//   a {
+//     background: $blue-light;
+//     color: $blue;
+//     text-decoration: none;
+//     &:hover {
+//       text-decoration: underline;
+//     }
+//   }
+// }
 
 .PatientsDB {
   display: flex;
@@ -2305,7 +2315,7 @@ select {
   .Links,
   .Minigraph,
   .Summary,
-  .FAQ,
+  .Apollocare,
   .MapExplorer,
   .patients-summary
   .filters {
@@ -2328,9 +2338,12 @@ select {
     }
   }
 
-  .link,
-  .faq {
+  .link {
     width: calc(100% - 2rem);
+  }
+  .chat,
+  .Apollocare {
+    width: calc(100% - 2.5rem);
   }
 
   .Navbar {

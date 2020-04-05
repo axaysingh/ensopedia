@@ -70,13 +70,20 @@ function Links(props) {
       </div>
 
       <div className="link fadeInUp" style={{animationDelay: '0.8s'}}>
-        <h3>Thanks To COVID19INDIA</h3>
+        <h3>Thanks To Informatics Resources</h3>
         <a
           href="https://www.covid19india.org/"
           target="_blank"
           rel="noopener noreferrer"
         >
           https://www.covid19india.org/
+        </a><br></br>
+        <a
+          href="https://covid.apollo247.com/"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          https://covid.apollo247.com/
         </a>
       </div>
     </div>

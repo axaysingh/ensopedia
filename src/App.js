@@ -13,7 +13,7 @@ import Home from './components/home';
 import Navbar from './components/navbar';
 import Links from './components/links';
 // import Cluster from './components/cluster';
-import Pmcares from './components/pmcares';
+import Apollocare from './components/apollocare';
 import Banner from './components/banner';
 // import Patientdb from './components/patientdb';
 
@@ -38,18 +38,18 @@ function App() {
     //   view: Cluster,
     //   displayName: 'Clusters',
     //   animationDelayForNavbar: 0.4,
-    // },
+    // },    
+    {
+      pageLink: '/apollocare',
+      view: Apollocare,
+      displayName: 'Apollocare',
+      animationDelayForNavbar: 0.6,
+    },
     {
       pageLink: '/links',
       view: Links,
       displayName: 'Helpful Links',
       animationDelayForNavbar: 0.5,
-    },
-    {
-      pageLink: '/pmcares',
-      view: Pmcares,
-      displayName: 'PMCARES',
-      animationDelayForNavbar: 0.6,
     },
     {
       pageLink: '/covid19',
