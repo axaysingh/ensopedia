@@ -14,7 +14,7 @@ import Navbar from './components/navbar';
 import Links from './components/links';
 // import Cluster from './components/cluster';
 import Pmcares from './components/pmcares';
-// import Banner from './components/banner';
+import Banner from './components/banner';
 /* import PatientDB from './components/patientdb';*/
 
 const history = require('history').createBrowserHistory;
@@ -65,7 +65,7 @@ function App() {
           render={({location}) => (
             <div className="Almighty-Router">
               <Navbar pages={pages} />
-              {/* <Banner /> */}
+              <Banner />
               <Route exact path="/" render={() => <Redirect to="/" />} />
               <Switch location={location}>
                 {pages.map((page, i) => {

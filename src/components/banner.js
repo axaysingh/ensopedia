@@ -2,49 +2,53 @@ import React, {useState, useEffect, useCallback} from 'react';
 import axios from 'axios';
 
 function Banner(props) {
-  const [snippets, setSnippets] = useState([]);
-  const [snippet, setSnippet] = useState();
+  const [tcase, totalCase] = useState('');
+  const [death, totalDeath] = useState('');
+  const [active, totalActive] = useState('');
+  const [recover, totalRecover] = useState('');
+  const [fetched, setFetched] = useState(false);
 
   useEffect(() => {
+    if (fetched === false) {
+      getStates();
+    }
+  }, 10000, [fetched]);
+
+  const getStates = () =>{
     axios
-      .get('https://api.covid19india.org/website_data.json')
-      .then((response) => {
-        setSnippets(response.data.factoids || []);
-        setSnippet(
-          response.data.factoids[
-            Math.floor(
-              Math.random() * (response.data.factoids.length - 1 - 0) + 0
-            )
-          ] || ''
-        );
+      .get('https://api.thevirustracker.com/free-api?global=stats')
+      .then((response) => {      
+        totalCase(response.data.results[0].total_cases);
+        totalDeath(response.data.results[0].total_deaths);
+        totalActive(response.data.results[0].total_active_cases);
+        totalRecover(response.data.results[0].total_recovered);
+        setFetched(true);
       })
       .catch((err) => {
         console.log(err);
       });
-  }, []);
+  }
 
-  const snippetChooser = useCallback(
-    (min, max) => {
-      const index = Math.random() * (max - min) + min;
-      setSnippet(snippets[Math.floor(index)]);
-    },
-    [snippets]
-  );
-
-  useEffect(() => {
-    const interval = setInterval(() => {
-      snippetChooser(0, snippets.length - 1);
-    }, 10000);
-    return () => clearInterval(interval);
-  }, [snippetChooser, snippets]);
-
-  return (
+  return (    
     <div
-      onClick={() => snippetChooser(0, snippets.length - 1)}
+      onClick={() => setFetched()}
       className="Banner fadeInUp"
       style={{animationDelay: '0.2s'}}
     >
-      <div className="snippet">{snippet ? snippet.banner : ''} &nbsp;</div>
+      <div className="snippet">
+        <span style={{color:'#ffc107',animationDelay: '0.2s'}}>WORLD
+          <h2>{tcase}</h2>  
+        </span>
+        <span style={{color:'#007bff',animationDelay: '0.3s'}}>Active
+          <h2 >{active}</h2>  
+        </span>
+        <span style={{color:'#28a745',animationDelay: '0.4s'}}>Recovered
+          <h2>{recover}</h2>  
+        </span>
+        <span style={{color:'#ff073a',animationDelay: '0.5s'}}>Deceased
+          <h2>{death}</h2>  
+        </span>
+      </div>
     </div>
   );
 }

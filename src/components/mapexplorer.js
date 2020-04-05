@@ -395,14 +395,14 @@ export default function ({states, stateDistrictWiseData, regionHighlighted}) {
             <h1>{currentHoveredRegion.active || ''}</h1>
             {/* <h6>{}</h6> */}
             <h6>
-              {currentHoveredRegion.confirmed > 0
+              {/* {currentHoveredRegion.confirmed > 0
                 ? (
                     (currentHoveredRegion.active /
                       currentHoveredRegion.confirmed) *
                     100
                   ).toFixed(2)
                 : 0}
-              %
+              % */}
             </h6>
           </div>
         </div>
@@ -413,14 +413,14 @@ export default function ({states, stateDistrictWiseData, regionHighlighted}) {
             <h1>{currentHoveredRegion.recovered || ''}</h1>
             {/* <h6>{}</h6> */}
             <h6>
-              {currentHoveredRegion.confirmed > 0
+              {/* {currentHoveredRegion.confirmed > 0
                 ? (
                     (currentHoveredRegion.recovered /
                       currentHoveredRegion.confirmed) *
                     100
                   ).toFixed(2)
                 : 0}
-              %
+              % */}
             </h6>
           </div>
         </div>
@@ -431,14 +431,14 @@ export default function ({states, stateDistrictWiseData, regionHighlighted}) {
             <h1>{currentHoveredRegion.deaths || ''}</h1>
             {/* <h6>{}</h6> */}
             <h6>
-              {currentHoveredRegion.confirmed > 0
+              {/* {currentHoveredRegion.confirmed > 0
                 ? (
                     (currentHoveredRegion.deaths /
                       currentHoveredRegion.confirmed) *
                     100
                   ).toFixed(2)
                 : 0}
-              %
+              % */}
             </h6>
           </div>
         </div>

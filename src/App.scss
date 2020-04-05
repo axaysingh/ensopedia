@@ -341,22 +341,27 @@ h6 {
 .Banner {
   display: flex;
   flex-direction: row;
-  justify-content: center;
-  line-height: 20px;
-  font-family: 'Archia';
-  font-size: 0.8rem;
-  font-weight: 600;
-  color: $purple;
-  background: $purple-light;
+  justify-content: space-around;
+  text-transform: uppercase;
+  font-weight: 900;
+  padding: 1 rem;
 
-  .snippet {
-    align-self: center;
-    width: calc(100% - 10rem);
-    word-wrap: break-word;
-    padding: 1.5rem;
-    text-align: center;
-    cursor: pointer;
-  }
+    .snippet {
+      display: inline-block;
+      font-size: 16px;
+      font-family: 'Archia';
+      text-decoration: none;
+      color: $black;
+
+      span {
+        display: inline-block;
+        transition: color 0.2s ease-in-out; 
+        margin-right: 0.95rem !important;
+        flex: 1;
+        font-weight: 1100;
+        font-size: 16px;
+      }
+    }
 }
 
 .Navbar {
@@ -2369,7 +2374,7 @@ select {
   }
 
   .Banner {
-    height: 7rem;
+    // height: 4rem;
 
     .snippet {
       width: 100%;
