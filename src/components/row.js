@@ -102,7 +102,7 @@ function Row(props) {
       >
         <td style={{fontWeight: 600}}>{state.state}</td>
         <td>
-          <span className="deltas" style={{color: '#ff073a'}}>
+          <span className="deltas" style={{color: '#ffc107'}}>
             {state.deltaconfirmed > 0 && <Icon.ArrowUp />}
             {state.deltaconfirmed > 0 ? `${state.deltaconfirmed}` : ''}
           </span>
@@ -131,7 +131,7 @@ function Row(props) {
         <td
           style={{color: parseInt(state.deaths) === 0 ? '#B5B5B5' : 'inherit'}}
         >
-          <span className="deltas" style={{color: '#6c757d'}}>
+          <span className="deltas" style={{color: '#ff073a'}}>
             {state.deltadeaths > 0 && <Icon.ArrowUp />}
             {state.deltadeaths > 0 ? `${state.deltadeaths}` : ''}
           </span>

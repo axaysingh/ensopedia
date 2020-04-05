@@ -15,7 +15,7 @@ import Links from './components/links';
 // import Cluster from './components/cluster';
 import Pmcares from './components/pmcares';
 import Banner from './components/banner';
-/* import PatientDB from './components/patientdb';*/
+// import Patientdb from './components/patientdb';
 
 const history = require('history').createBrowserHistory;
 
@@ -28,8 +28,8 @@ function App() {
       animationDelayForNavbar: 0.2,
     },
     // {
-    //   pageLink: '/patientsDB',
-    //   view: PatientDB,
+    //   pageLink: '/patientdb',
+    //   view: Patientdb,
     //   displayName: 'Patients DB',
     //   animationDelayForNavbar: 0.3,
     // },
@@ -55,7 +55,7 @@ function App() {
       pageLink: '/covid19',
       view: Home,
       animationDelayForNavbar: 0.2,
-    },
+    }    
   ];
 
   return (
