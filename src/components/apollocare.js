@@ -7,7 +7,7 @@ function Apollocare(props) {
       <div className="chat fadeInUp" style={{animationDelay: '0.2s'}}>
         <Iframe url="https://covid.apollo247.com/"
           width="360px"
-          height="550px"
+          height="650px"
           id="myId"
           className="myClassname"
           display="initial"
