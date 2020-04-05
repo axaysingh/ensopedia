@@ -153,7 +153,7 @@ function Home(props) {
                   <input
                     type="checkbox"
                     // checked={timeseriesMode}
-                    checked={timeseriesMode && graphOption!=3}
+                    checked={timeseriesMode && graphOption!==3}
                     className="switch"
                     aria-label="Checked by default to scale uniformly."
                     disabled={graphOption === 3}
