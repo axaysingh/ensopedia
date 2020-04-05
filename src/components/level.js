@@ -66,6 +66,7 @@ function Level(props) {
         <h4>&nbsp;</h4>
         {/* <h4>[{props.deltas ? props.deltas.confirmeddelta-(props.deltas.recovereddelta+props.deltas.deceaseddelta) >=0 ? '+'+(props.deltas.confirmeddelta-(props.deltas.recovereddelta+props.deltas.deceaseddelta)).toString() : '+0' : ''}]</h4>*/}
         <h1 className="title has-text-info">{active}</h1>
+        <h4>{((active / confirmed) * 100).toFixed(2)}%</h4>
       </div>
       </span>
 
@@ -82,6 +83,7 @@ function Level(props) {
           ]
         </h4>
         <h1 className="title has-text-success">{recoveries} </h1>
+        <h4>{((recoveries / confirmed) * 100).toFixed(2)}%</h4>
       </div>
       </span>
 
@@ -92,6 +94,7 @@ function Level(props) {
           [{deltas ? (deltas.deaths >= 0 ? '+' + deltas.deaths : '+0') : ''}]
         </h4>
         <h1 className="title has-text-grey">{deaths}</h1>
+        <h4>{((deaths / confirmed) * 100).toFixed(2)}%</h4>
       </div>
       </span>
     </div>
