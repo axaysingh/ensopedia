@@ -19,9 +19,9 @@ function TimeSeries(props) {
   const graphElement8 = useRef(null);
   const graphElement9 = useRef(null);
 
-  // useEffect(() => {
-  //   graphDataStates(props.statesData);
-  // },[props.statesData])
+  useEffect(() => {
+    graphDataStates(props.statesData);
+  },[props.statesData])
 
   useEffect(() => {
     if (props.timeseries.length > 1) {
@@ -231,7 +231,7 @@ function TimeSeries(props) {
     },
     [mode]
   );
-  useCallback(
+  const graphDataStates = useCallback(
     (statesData) => {
       const data = statesData;
       data.splice(0,1);
