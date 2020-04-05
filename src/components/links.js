@@ -76,7 +76,7 @@ function Links(props) {
           target="_blank"
           rel="noopener noreferrer"
         >
-          https://covid19india.org/
+          https://www.covid19india.org/
         </a>
       </div>
     </div>
