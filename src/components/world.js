@@ -40,8 +40,8 @@ class World extends Component {
         <tr style={{textTransform:'uppercase'}}>
             {/* <td><img src={ratesArr[key].countryInfo.flag} height='20' width='25' alt="flag"/></td> */}
             <td class="state">{ratesArr[key].country} <img src={ratesArr[key].countryInfo.flag} height='10' width='20' alt="flag"/></td>
-            <td class="state" style={{background: 'rgb(248, 249, 250'}}>{ratesArr[key].active}</td>
-            <td class="state" >{ratesArr[key].cases}</td>
+            <td class="state" style={{background: 'rgb(248, 249, 250'}}>{ratesArr[key].cases}</td>
+            <td class="state" >{ratesArr[key].active}</td>
             <td class="state" style={{background: 'rgb(248, 249, 250'}}>{ratesArr[key].recovered}</td>
             <td class="state">{ratesArr[key].deaths}</td>
         </tr>
