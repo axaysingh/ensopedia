@@ -16,6 +16,7 @@ import Links from './components/links';
 import Apollocare from './components/apollocare';
 import Banner from './components/banner';
 // import Patientdb from './components/patientdb';
+import World from './components/world';
 
 const history = require('history').createBrowserHistory;
 
@@ -26,6 +27,12 @@ function App() {
       view: Home,
       displayName: 'COVID19',
       animationDelayForNavbar: 0.2,
+    },
+    {
+      pageLink: '/world',
+      view: World,
+      displayName: 'World',
+      animationDelayForNavbar: 0.5,
     },
     // {
     //   pageLink: '/patientdb',
@@ -48,9 +55,9 @@ function App() {
     {
       pageLink: '/links',
       view: Links,
-      displayName: 'Helpful Links',
+      displayName: 'Links',
       animationDelayForNavbar: 0.5,
-    },
+    },    
     {
       pageLink: '/covid19',
       view: Home,

@@ -84,6 +84,13 @@ function Links(props) {
           rel="noopener noreferrer"
         >
           https://covid.apollo247.com/
+        </a><br></br>
+        <a
+          href="https://github.com/NOVELCOVID/API/"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          https://github.com/NOVELCOVID/API/
         </a>
       </div>
     </div>

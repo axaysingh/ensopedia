@@ -2346,6 +2346,10 @@ select {
     width: calc(100% - 1.6rem);
   }
 
+  .worldTable {
+    width: calc(100% - 1rem);
+  }
+
   .Navbar {
     a {
       font-size: 0.75rem !important;
@@ -2629,5 +2633,14 @@ select {
 }
 
 .myClassname{
-  box-shadow: inset 0 -7em 4em rgba(0,0,0,0.1), 0 0 0 3px rgb(255,255,255), 0.4em 0.4em 2em rgba(0,0,0,0.3) !important;
+  box-shadow: inset 0 -4em 4em rgba(0,0,0,0.1), 0 0 0 3px rgb(255,255,255), 0.4em 0.4em 2em rgba(0,0,0,0.3) !important;
+}
+.worldTable{
+    // width: 30rem;
+    margin-top: 1rem;
+    margin-bottom: 0.5rem;
+    // align-self: center;
+    // position: 'absolute';
+    display: flex;
+    flex-direction: column;
 }
