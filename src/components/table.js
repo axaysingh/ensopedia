@@ -132,7 +132,7 @@ function Table(props) {
             <th className="sticky" onClick={(e) => handleSort(e, props)}>
               <div className="heading-content">
                 <abbr
-                  className={`${window.innerWidth <= 769 ? 'is-yellow' : ''}`}
+                  className={`${window.innerWidth <= 769 ? 'is-cherry' : ''}`}
                   title="Confirmed"
                 >
                   {window.innerWidth <= 769
@@ -215,7 +215,7 @@ function Table(props) {
             <th className="sticky" onClick={(e) => handleSort(e, props)}>
               <div className="heading-content">
                 <abbr
-                  className={`${window.innerWidth <= 769 ? 'is-cherry' : ''}`}
+                  className={`${window.innerWidth <= 769 ? 'is-gray' : ''}`}
                   title="Deaths"
                 >
                   {window.innerWidth <= 769
