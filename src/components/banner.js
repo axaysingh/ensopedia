@@ -36,10 +36,10 @@ function Banner(props) {
       style={{animationDelay: '0.2s'}}
     >
       <div className="snippet">
-        <span style={{color:'#ffc107',animationDelay: '0.2s'}}>WORLD
+        <span style={{color:'#ffc107',animationDelay: '0.2s'}}>WORLD Count
           <h2>{tcase}</h2>  
         </span>
-        <span style={{color:'#007bff',animationDelay: '0.3s'}}>Active
+        <span style={{color:'#007bff',animationDelay: '0.3s'}}>Active Live
           <h2 >{active}</h2>  
         </span>
         <span style={{color:'#28a745',animationDelay: '0.4s'}}>Recovered

@@ -367,7 +367,7 @@ export default function ({states, stateDistrictWiseData, regionHighlighted}) {
               style={{
                 fontWeight: 900,
                 color: '#fff',
-                background: '#000',
+                background: '#ff073a',
                 padding: '0.25rem',
                 borderRadius: '2.5px',
                 marginRight: '0.25rem',
