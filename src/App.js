@@ -110,11 +110,21 @@ function App() {
         </a>
         <a
           href="https://facebook.com/ensopedia"
-          className="button facebook"
+          className="button twitter"
           target="_noblank"
+          style={{justifyContent: 'center'}}
         >
           <Icon.Facebook />
-          <span>Connect on Facebook!</span>
+          <span>Connect on Facebook</span>
+        </a>
+        <a
+          href="https://rebrand.ly/h4dzvs2"
+          className="button twitter"
+          target="_noblank"
+          style={{justifyContent: 'center'}}
+        >
+          <Icon.Download/>
+          <span>Download Application</span>
         </a>
       </footer>
     </div>
