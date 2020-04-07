@@ -2,6 +2,8 @@ import React, {useState, useEffect, useCallback} from 'react';
 import * as Icon from 'react-feather';
 import {formatDate, formatDateAbsolute} from '../utils/common-functions';
 import {formatDistance} from 'date-fns';
+import {Link} from 'react-router-dom';
+
 function Row(props) {
   const [state, setState] = useState(props.state);
   const [districts, setDistricts] = useState(props.districts);
@@ -81,17 +83,6 @@ function Row(props) {
 
   return (
     <React.Fragment>
-      <span
-        className={`dropdown ${
-          props.reveal ? 'rotateRightDown' : 'rotateDownRight'
-        }`}
-        style={{display: !props.total ? '' : 'none'}}
-        onClick={() => {
-          handleReveal();
-        }}
-      >
-        <Icon.ChevronDown />
-      </span>
       <tr
         className={props.total ? 'state is-total' : 'state'}
         onMouseEnter={() => props.onHighlightState?.(state, props.index)}
@@ -100,13 +91,30 @@ function Row(props) {
         onClick={!props.total ? handleReveal : null}
         style={{background: props.index % 2 === 0 ? '#f8f9fa' : ''}}
       >
-        <td style={{fontWeight: 600}}>{state.state}</td>
+        <td style={{fontWeight: 600}}>
+          <div className="table__title-wrapper">
+            <span
+              className={`dropdown ${
+                props.reveal ? 'rotateRightDown' : 'rotateDownRight'
+              }`}
+              style={{display: !props.total ? '' : 'none'}}
+              onClick={() => {
+                handleReveal();
+              }}
+            >
+              <Icon.ChevronDown />
+            </span>
+            {state.state}
+          </div>
+        </td>
         <td>
           <span className="deltas" style={{color: '#ffc107'}}>
             {state.deltaconfirmed > 0 && <Icon.ArrowUp />}
             {state.deltaconfirmed > 0 ? `${state.deltaconfirmed}` : ''}
           </span>
-          {parseInt(state.confirmed) === 0 ? '-' : state.confirmed}
+          <span className="table__count-text">
+            {parseInt(state.confirmed) === 0 ? '-' : state.confirmed}
+          </span>
         </td>
         <td
           style={{color: parseInt(state.active) === 0 ? '#B5B5B5' : 'inherit'}}
@@ -126,16 +134,20 @@ function Row(props) {
             {state.deltarecovered > 0 && <Icon.ArrowUp />}
             {state.deltarecovered > 0 ? `${state.deltarecovered}` : ''}
           </span>
-          {parseInt(state.recovered) === 0 ? '-' : state.recovered}
+          <span className="table__count-text">
+            {parseInt(state.recovered) === 0 ? '-' : state.recovered}
+          </span>
         </td>
         <td
           style={{color: parseInt(state.deaths) === 0 ? '#B5B5B5' : 'inherit'}}
         >
-          <span className="deltas" style={{color: '#ff073a'}}>
+          <span className="deltas" style={{color: '#FF073A'}}>
             {state.deltadeaths > 0 && <Icon.ArrowUp />}
             {state.deltadeaths > 0 ? `${state.deltadeaths}` : ''}
           </span>
-          {parseInt(state.deaths) === 0 ? '-' : state.deaths}
+          <span className="table__count-text">
+            {parseInt(state.deaths) === 0 ? '-' : state.deaths}
+          </span>
         </td>
       </tr>
 
@@ -221,14 +233,11 @@ function Row(props) {
               return (
                 <tr
                   key={index}
-                  // className={`district`}
-                  // style={{
-                  //   display: props.reveal && !props.total ? '' : 'none',
-                  //   background: index % 2 === 0 ? '#f8f9fa' : '',
-                  // }}
-                  className={`district ${
-                    props.reveal && !props.total ? `reveal--${index}` : ''
-                  } ${index % 2 === 0 ? 'even' : ''}`}
+                  className={`district`}
+                  style={{
+                    display: props.reveal && !props.total ? '' : 'none',
+                    background: index % 2 === 0 ? '#f8f9fa' : '',
+                  }}
                   onMouseEnter={() =>
                     props.onHighlightDistrict?.(district, state, props.index)
                   }
@@ -247,7 +256,9 @@ function Row(props) {
                         ? `${sortedDistricts[district].delta.confirmed}`
                         : ''}
                     </span>
-                    {sortedDistricts[district].confirmed}
+                    <span className="table__count-text">
+                      {sortedDistricts[district].confirmed}
+                    </span>
                   </td>
                 </tr>
               );
@@ -257,16 +268,8 @@ function Row(props) {
 
       {sortedDistricts?.Unknown && (
         <tr
-          // className={`district`}
-          // style={{display: props.reveal && !props.total ? '' : 'none'}}
+          className={`district`}
           style={{display: props.reveal && !props.total ? '' : 'none'}}
-          className={`district ${
-            props.reveal && !props.total
-              ? `reveal--${Object.keys(sortedDistricts).length - 1}`
-              : ''
-          } ${
-            (Object.keys(sortedDistricts).length - 1) % 2 === 0 ? 'even' : ''
-          }`}
         >
           <td style={{fontWeight: 600}}>Unknown</td>
           <td>
@@ -278,7 +281,9 @@ function Row(props) {
                 ? `${sortedDistricts['Unknown'].delta.confirmed}`
                 : ''}
             </span>
-            {sortedDistricts['Unknown'].confirmed}
+            <span className="table__count-text">
+              {sortedDistricts['Unknown'].confirmed}
+            </span>
           </td>
         </tr>
       )}

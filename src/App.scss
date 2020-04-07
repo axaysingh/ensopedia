@@ -757,7 +757,7 @@ table {
       border-radius: 5px;
       text-align: right;
       .deltas {
-        margin-right: 0.25rem;
+        display: inline-block;
         font-size: 11px !important;
 
         svg {

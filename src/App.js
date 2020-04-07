@@ -110,7 +110,7 @@ function App() {
         </a>
         <a
           href="https://facebook.com/ensopedia"
-          className="button twitter"
+          className="button telegram"
           target="_noblank"
           style={{justifyContent: 'center'}}
         >
@@ -119,7 +119,7 @@ function App() {
         </a>
         <a
           href="https://rebrand.ly/h4dzvs2"
-          className="button twitter"
+          className="button github"
           target="_noblank"
           style={{justifyContent: 'center'}}
         >
