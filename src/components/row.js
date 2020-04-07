@@ -299,5 +299,4 @@ function Row(props) {
     </React.Fragment>
   );
 }
-
 export default Row;
