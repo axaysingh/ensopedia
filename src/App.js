@@ -25,7 +25,7 @@ function App() {
     {
       pageLink: '/',
       view: Home,
-      displayName: 'COVID19',
+      displayName: 'India',
       animationDelayForNavbar: 0.2,
     },
     {
