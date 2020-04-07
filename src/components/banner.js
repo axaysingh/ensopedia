@@ -16,12 +16,12 @@ function Banner(props) {
 
   const getStates = () =>{
     axios
-      .get('https://api.thevirustracker.com/free-api?global=stats')
-      .then((response) => {      
-        totalCase(response.data.results[0].total_cases);
-        totalDeath(response.data.results[0].total_deaths);
-        totalActive(response.data.results[0].total_active_cases);
-        totalRecover(response.data.results[0].total_recovered);
+      .get('https://corona.lmao.ninja/all')
+      .then((response) => {        
+        totalCase(response.data.cases);
+        totalDeath(response.data.deaths);
+        totalActive(response.data.active);
+        totalRecover(response.data.recovered);
         setFetched(true);
       })
       .catch((err) => {
