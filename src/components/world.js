@@ -61,9 +61,17 @@ class World extends Component {
         return <div className="fadeInUp"><img src="/virus.gif" class="rotate" width="100" style={{display: 'block', margin:'0 auto',marginTop:'5%'}}/>
         </div>;
       } else {
-        return (
-          <main>
-            <div className="chat" style={{marginLeft:'-4%'}}>
+        return (          
+          <main>            
+            <div className="chat" style={{marginLeft:'-4%',marginBottom:'-5%'}}> 
+                <div className="header fadeInUp" style={{animationDelay: '0.5s',paddingTop:'0.5rem',marginLeft:'1rem'}}>
+                  <div className="header-mid">
+                    <div className="titles">
+                      <h1>COVID-19 World Pandemic Tracker</h1>
+                      <h6 style={{fontWeight: 600}}>A Crowdsourced Initiative</h6>
+                    </div>
+                  </div>
+                </div>         
               <table style={{margin:'0 auto'}}>
                 <thead>
                   <tr>

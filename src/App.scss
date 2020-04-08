@@ -1320,13 +1320,6 @@ table {
       }
     }
 
-    .stateWiseMapAxis{
-      text{
-        font-size: 10px;
-        font-weight: bold;
-      }
-    }
-
     &.is-green {
       background: $green-light;
 
@@ -2400,7 +2393,7 @@ select {
     .snippet {
       width: 100%;
       margin-left: 1rem;
-      margin-right: 1rem;
+      // margin-right: 0.6rem;
     }
   }
 
@@ -2647,4 +2640,36 @@ select {
     // position: 'absolute';
     display: flex;
     flex-direction: column;
+}
+
+.pills {
+  >button {
+    border: 1px solid #c9d6fb;
+    background-color: #edf1fe;
+    color: $blue;
+    text-transform: uppercase;
+    text-align: center;
+    font-weight: 800;
+    transition: background 0.15s ease-in-out;
+    padding: 4px 10px;
+    font-family: 'archia';
+
+    &.selected {
+      background-color: #c9d6fb;
+    }
+
+    &:focus:not(:focus-visible) {
+      outline: none;
+    }
+
+    &:first-of-type {
+      border-top-left-radius: 5px;
+      border-bottom-left-radius: 5px;
+    }
+
+    &:last-of-type {
+      border-top-right-radius: 5px;
+      border-bottom-right-radius: 5px;
+    }
+  }
 }
