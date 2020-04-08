@@ -4,6 +4,7 @@ import * as d3 from 'd3';
 import {
   preprocessTimeseries,
   sliceTimeseriesFromEnd,
+  getDaysFromLockdown,
 } from '../utils/common-functions';
 
 function TimeSeries(props) {
@@ -335,6 +336,7 @@ function TimeSeries(props) {
     }
   }, [timeseries, graphData]);
 
+  const daysFromLockdown = getDaysFromLockdown();
   const yesterdayDate = new Date();
   yesterdayDate.setDate(yesterdayDate.getDate() - 1);
   const lastDate = new Date(datapoint['date'] + '2020');
@@ -578,6 +580,14 @@ function TimeSeries(props) {
           aria-label="14 days"
         >
           14D
+        </button>
+        <button
+          type="button"
+          onClick={() => setLastDaysCount(daysFromLockdown)}
+          className={lastDaysCount === daysFromLockdown ? 'selected' : ''}
+          aria-label="Lockdown"
+        >
+          Lockdown
         </button>
       </div>
     </div>
