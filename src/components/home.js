@@ -67,7 +67,7 @@ function Home(props) {
         <div className="header fadeInUp" style={{animationDelay: '0.5s'}}>
           <div className="header-mid">
             <div className="titles">
-              <h1>COVID-19 India Pandemic Tracker</h1>
+              <h1>India COVID-19 Pandemic Tracker</h1>
               <h6 style={{fontWeight: 600}}>A Crowdsourced Initiative</h6>
             </div>
             <div className="last-update">

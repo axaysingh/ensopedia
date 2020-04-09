@@ -67,7 +67,7 @@ class World extends Component {
                 <div className="header fadeInUp" style={{animationDelay: '0.5s',paddingTop:'0.5rem',marginLeft:'1rem'}}>
                   <div className="header-mid">
                     <div className="titles">
-                      <h1>COVID-19 World Pandemic Tracker</h1>
+                      <h1>World COVID-19 Pandemic Tracker</h1>
                       <h6 style={{fontWeight: 600}}>A Crowdsourced Initiative</h6>
                     </div>
                   </div>

@@ -34,7 +34,7 @@ function Summary(props) {
   return (
     <div className="Summary">
       <div className="header fadeInUp" style={{animationDelay: '0.5s'}}>
-        <h1>COVID-19 India Pandemic Tracker</h1>
+        <h1>India COVID-19 Pandemic Tracker</h1>
       </div>
 
       <Minigraph timeseries={timeseries} animate={false} />
