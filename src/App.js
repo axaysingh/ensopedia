@@ -98,7 +98,7 @@ function App() {
         />*/}
 
         <h5>Stay Home | Stay Safe | Stay Healthy | Stay Lives</h5>
-        <h4>By - Ensopedia</h4>
+        <h4>- Ensopedia</h4>
         <a
           href="https://twitter.com/ensopedia"
           target="_noblank"
