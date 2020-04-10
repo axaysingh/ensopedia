@@ -83,10 +83,8 @@ class World extends Component {
         </div>;
       } else {
         let timez= moment(lastUpdated)._d;
-        let formatedTime = moment(timez).format('ddd MMM do YYYY, h:mm:ss A Z');
-        // console.log(timez);
-        // console.log(moment(timez).format('ddd MMM do YYYY, h:mm:ss A Z'))
-
+        let formatedTime = moment(timez).format('ddd,D MMMM YYYY, h:mm:ss A Z');
+        
         return (         
           <main>            
             <div className="chat" style={{marginLeft:'-4%',marginBottom:'-5%'}}> 
