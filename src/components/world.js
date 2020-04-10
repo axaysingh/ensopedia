@@ -1,4 +1,6 @@
 import React, {Component}from 'react';
+import * as Icon from 'react-feather';
+import moment from 'moment';
 
 class World extends Component {
     constructor(props) {
@@ -10,15 +12,16 @@ class World extends Component {
       };
     }
   
-    componentDidMount() {
+    componentDidMount() {      
       fetch("https://corona.lmao.ninja/countries") // data source is an object, not an array.
         .then(res => res.json()) // Short typo for response.
-        .then(
+        .then(          
           result => {
             this.setState({
               isLoaded: true,
-              rates: result
-            });
+              rates: result,
+              lastUpdated : result[0].updated
+            });          
           },
           error => {
             this.setState({
@@ -32,18 +35,36 @@ class World extends Component {
   
     createTable = () => {
       const rates = this.state;
-      let ratesArr = Object.keys(rates).map(i => rates[i])[2]; 
+      let ratesArr = Object.keys(rates).map(i => rates[i])[2];             
       let table = [];
       let children = [];
     for (var key in ratesArr) {
         children.push(
         <tr style={{textTransform:'uppercase'}}>
             {/* <td><img src={ratesArr[key].countryInfo.flag} height='20' width='25' alt="flag"/></td> */}
-            <td class="state">{ratesArr[key].country} <img src={ratesArr[key].countryInfo.flag} height='10' width='20' alt="flag"/></td>
-            <td class="state" style={{background: 'rgb(248, 249, 250'}}>{ratesArr[key].cases}</td>
-            <td class="state" >{ratesArr[key].active}</td>
-            <td class="state" style={{background: 'rgb(248, 249, 250'}}>{ratesArr[key].recovered}</td>
-            <td class="state">{ratesArr[key].deaths}</td>
+            <td class="state">
+              {ratesArr[key].country} <img src={ratesArr[key].countryInfo.flag} height='10' width='20' alt="flag"/>
+            </td>
+            <td class="state" style={{background: 'rgb(248, 249, 250'}}>
+              <span className="deltas" style={{color: '#ffc107'}}>
+                {ratesArr[key].todayCases > 0 && <Icon.ArrowUp />}
+                {ratesArr[key].todayCases > 0 ? `${ratesArr[key].todayCases}` : ''}
+              </span>
+              {ratesArr[key].cases}
+            </td>
+            <td class="state" >
+              {ratesArr[key].active}
+            </td>
+            <td class="state" style={{background: 'rgb(248, 249, 250'}}>              
+              {ratesArr[key].recovered}
+            </td>
+            <td class="state">
+              <span className="deltas" style={{color: '#ff073a'}}>
+                {ratesArr[key].todayDeaths > 0 && <Icon.ArrowUp />}
+                {ratesArr[key].todayDeaths > 0 ? `${ratesArr[key].todayDeaths}` : ''}
+              </span>
+              {ratesArr[key].deaths}
+            </td>
         </tr>
         );
     }
@@ -53,15 +74,20 @@ class World extends Component {
     };
   
     render() {
-      const { error, isLoaded } = this.state;
-  
+      const { error, isLoaded, lastUpdated } = this.state;
+            
       if (error) {
         return <div>Oops: {error.message}</div>;
       } else if (!isLoaded) {
         return <div className="fadeInUp"><img src="/virus.gif" class="rotate" width="100" style={{display: 'block', margin:'0 auto',marginTop:'5%'}}/>
         </div>;
       } else {
-        return (          
+        let timez= moment(lastUpdated)._d;
+        let formatedTime = moment(timez).format('ddd MMM do YYYY, h:mm:ss A Z');
+        // console.log(timez);
+        // console.log(moment(timez).format('ddd MMM do YYYY, h:mm:ss A Z'))
+
+        return (         
           <main>            
             <div className="chat" style={{marginLeft:'-4%',marginBottom:'-5%'}}> 
                 <div className="header fadeInUp" style={{animationDelay: '0.5s',paddingTop:'0.5rem',marginLeft:'1rem'}}>
@@ -69,6 +95,10 @@ class World extends Component {
                     <div className="titles">
                       <h1>World COVID-19 Pandemic Tracker</h1>
                       <h6 style={{fontWeight: 600}}>A Crowdsourced Initiative</h6>
+                    </div>
+                    <div className="last-update" style={{marginRight:'-1rem'}}>
+                      <h6>Last Updated</h6>                      
+                      <h6 style={{color: '#28a745', fontWeight: 600}}>{formatedTime.toString()}</h6>
                     </div>
                   </div>
                 </div>         
