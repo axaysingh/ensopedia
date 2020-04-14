@@ -96,10 +96,7 @@ function App() {
       <Router history={history}>
         <Route
           render={({location}) => (
-            <div className="Almighty-Router">
-              <div class="bottom">
-              <h5>Stay Home | Stay Safe | Stay Healthy | Stay Lives<br/><br/><span class="link"><a>Ensopedia</a></span></h5>
-              </div>
+            <div className="Almighty-Router">             
               <Footer/>
             </div>
           )}
