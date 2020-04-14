@@ -87,7 +87,7 @@ class World extends Component {
         
         return (         
           <main>            
-            <div className="chat" style={{marginLeft:'-4%',marginBottom:'-5%'}}> 
+            <div className="chat" style={{marginLeft:'-4%',marginBottom:'-2%'}}> 
                 <div className="header fadeInUp" style={{animationDelay: '0.5s',paddingTop:'0.5rem',marginLeft:'1rem'}}>
                   <div className="header-mid">
                     <div className="titles">
