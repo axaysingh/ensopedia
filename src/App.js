@@ -5,7 +5,7 @@ import {
   Route,
   Redirect,
 } from 'react-router-dom';
-import * as Icon from 'react-feather';
+// import * as Icon from 'react-feather';
 
 import './App.scss';
 
@@ -17,6 +17,7 @@ import Apollocare from './components/apollocare';
 import Banner from './components/banner';
 // import Patientdb from './components/patientdb';
 import World from './components/world';
+import Footer from './components/footer';
 
 const history = require('history').createBrowserHistory;
 
@@ -91,42 +92,20 @@ function App() {
         />
       </Router>
 
-      <footer className="fadeInUp" style={{animationDelay: '2s'}}>
-        {/* <img
-          src="/icon.png"
-          alt="https://www.ensopedia.com | Coronavirus cases live dashboard"
-        />*/}
-
-        <h5>Stay Home | Stay Safe | Stay Healthy | Stay Lives</h5>
-        <h4>Ensopedia</h4>
-        <a
-          href="https://twitter.com/ensopedia"
-          target="_noblank"
-          className="button twitter"
-          style={{justifyContent: 'center'}}
-        >
-          <Icon.Twitter />
-          <span>Connect on Twitter</span>
-        </a>
-        <a
-          href="https://facebook.com/ensopedia"
-          className="button telegram"
-          target="_noblank"
-          style={{justifyContent: 'center'}}
-        >
-          <Icon.Facebook />
-          <span>Connect on Facebook</span>
-        </a>
-        <a
-          href="https://rebrand.ly/h4dzvs2"
-          className="button github"
-          target="_noblank"
-          style={{justifyContent: 'center'}}
-        >
-          <Icon.Download/>
-          <span>Download Application</span>
-        </a>
-      </footer>
+      <div>
+      <Router history={history}>
+        <Route
+          render={({location}) => (
+            <div className="Almighty-Router">
+              <div class="bottom">
+              <h5>Stay Home | Stay Safe | Stay Healthy | Stay Lives<br/><br/><span class="link"><a>Ensopedia</a></span></h5>
+              </div>
+              <Footer/>
+            </div>
+          )}
+        />
+      </Router>
+      </div>
     </div>
   );
 }
