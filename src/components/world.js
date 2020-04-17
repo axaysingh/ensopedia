@@ -13,7 +13,7 @@ class World extends Component {
     }
   
     componentDidMount() {      
-      fetch("https://corona.lmao.ninja/v2/countries") // data source is an object, not an array.
+      fetch("https://corona.lmao.ninja/v2/countries?sort=cases") // data source is an object, not an array.
         .then(res => res.json()) // Short typo for response.
         .then(          
           result => {
