@@ -16,7 +16,7 @@ function Banner(props) {
 
   const getStates = () =>{
     axios
-      .get('https://corona.lmao.ninja/all')
+      .get('https://corona.lmao.ninja/v2/all')
       .then((response) => {        
         totalCase(response.data.cases);
         totalDeath(response.data.deaths);
